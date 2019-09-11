@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {TOGGLE_ITEM} from './actions';
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
@@ -29,6 +29,7 @@ const App = () => {
 
   const buyItem = item => {
     // dipsatch an action here to add an item
+  
   };
 
   return (
@@ -36,9 +37,9 @@ const App = () => {
       <div className="box">
         <Header car={state.car} />
         <AddedFeatures car={state.car} />
-      </div>
+      </div> 
       <div className="box">
-        <AdditionalFeatures store={state.store} />
+        <AdditionalFeatures Store={state.store} />
         <Total car={state.car} additionalPrice={state.additionalPrice} />
       </div>
     </div>

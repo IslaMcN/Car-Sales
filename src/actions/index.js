@@ -6,6 +6,6 @@ const toggleItem = item => {
     return{type: TOGGLE_ITEM, payload: item};
 };
 
-const TOGGLE_ITEM ="TOGGLE_ITEM";
+export const TOGGLE_ITEM ="TOGGLE_ITEM";
 
 export default toggleItem;
