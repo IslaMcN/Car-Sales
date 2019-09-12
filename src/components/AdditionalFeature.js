@@ -1,5 +1,6 @@
 import React from 'react';
 import toggleItem from '../actions';
+import { connect } from 'react-redux';
 
 const AdditionalFeature = props => {
   return (
@@ -12,4 +13,6 @@ const AdditionalFeature = props => {
   );
 };
 
-export default AdditionalFeature;
+export default connect(null, {toggleItem})(AdditionalFeature)
+
+

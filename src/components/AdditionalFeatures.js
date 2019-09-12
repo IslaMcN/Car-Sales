@@ -1,7 +1,7 @@
 import React from 'react';
 import AdditionalFeature from './AdditionalFeature';
 import {connect} from 'react-redux';
-import toggleItem from '../actions';
+
 
 const AdditionalFeatures = props => {
   return (
@@ -11,7 +11,7 @@ const AdditionalFeatures = props => {
         <ol type="1">
           {props.Store.map(item => (
             <AdditionalFeature key={item.id} feature={item}
-            toggleItem={props.toggleItem} />
+             />
           ))}
         </ol>
       ) : (
@@ -21,4 +21,8 @@ const AdditionalFeatures = props => {
   );
 };
 
-export default connect(null, {toggleItem})(AdditionalFeatures);
+const mapStateToProps = ({Store}) => {
+  return {Store}
+}
+
+export default connect(mapStateToProps, {})(AdditionalFeatures);
