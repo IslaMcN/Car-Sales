@@ -1,5 +1,5 @@
 import React from 'react';
-import {TOGGLE_ITEM} from './actions';
+import {TOGGLE_ITEM, toggleItem, removeItem} from './actions';
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
@@ -10,11 +10,12 @@ const App = (props) => {
 
   const removeFeature = item => {
     // dispatch an action here to remove an item
+    removeItem(item)
   };
 
   const buyItem = item => {
     // dipsatch an action here to add an item
-  
+    toggleItem(item)
   };
 
   return (
@@ -22,6 +23,8 @@ const App = (props) => {
       <div className="box">
         <Header  />
         <AddedFeatures  />
+        <button onClick={removeFeature}>Remove</button>
+        <button onClick={buyItem}>Buy</button>
       </div> 
       <div className="box">
         <AdditionalFeatures  />
@@ -30,5 +33,11 @@ const App = (props) => {
     </div>
   );
 };
+const mapStateToProps = state => {
+  return{
+    state: state
+  }
+}
 
-export default App;
+export default connect(
+  mapStateToProps, {})(App);
